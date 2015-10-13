@@ -107,12 +107,12 @@ void main(int argc, char *argv[])
 			puts("Guessing SNES file");
 			romType = TYPE_SNES;
 		}
-		else if(*(unsigned int*)(buf+4) == 0x24FFAE51)
+		else if(ntohl(*(unsigned int*)(buf+4)) == 0x24FFAE51)
 		{
 			puts("Guessing GBA file");
 			romType = TYPE_GBA;
 		}
-		else if(*(unsigned int*)(buf+0xC0) == 0x24FFAE51)
+		else if(ntohl(*(unsigned int*)(buf+0xC0)) == 0x24FFAE51)
 		{
 			puts("Guessing NDS file");
 			romType = TYPE_NDS;
